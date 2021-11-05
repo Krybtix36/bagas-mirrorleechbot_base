@@ -19,7 +19,7 @@ from bot.helper.telegram_helper.message_utils import *
 from .helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time
 from .helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper import button_build
-from .modules import authorize, anime, animequotes, ban, cancel_mirror, cat, clone, count, delete, fun, eval, extrahelp, list, leech_settings, jav, jav_strings, mediainfo, mirror, mirror_status, nsfw, nsfwhelp, nhentai, paste, shell, speedtest, stickers, sitesearch, songs, telegraph, text, tts, trt, torrent_search, usage, watch, wife, weebify, whois
+from .modules import authorize, anime, animequotes, ban, cancel_mirror, cat, clone, count, delete, fun, eval, extrahelp, list, leech_settings, mediainfo, mirror, mirror_status, nsfw, nsfwhelp, nhentai, paste, shell, speedtest, stickers, sitesearch, songs, telegraph, text, tts, trt, torrent_search, usage, watch, wife, weebify, whois
 
 format = "%Y %H:%M:%S"
 
@@ -76,7 +76,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 
 
 def restart(update, context):
-    restart_message = sendMessage("🟡 Restarting, Please wait!", context.bot, update)
+    restart_message = sendMessage("🟡 Bot sedang di restart,mohon tunggu!", context.bot, update)
     # Save restart message object in order to reply to it after restarting
     with open(".restartmsg", "w") as f:
         f.truncate(0)
@@ -251,11 +251,11 @@ def main():
     if os.path.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        bot.edit_message_text(f'🟢 Server Menyala! Semua proses dibatalkan. {current}', chat_id, msg_id)
+        bot.edit_message_text(f'🤖 Bot Berhasil di restart! 🟢 {current}', chat_id, msg_id)
         os.remove(".restartmsg")
     elif OWNER_ID:
         try:
-            text = "<b>Bot Restarted!</b>"
+            text = "<b>🟢 Server Menyala! Semua proses dibatalkan </b>"
             bot.sendMessage(chat_id=OWNER_ID, text=text, parse_mode=ParseMode.HTML)
             if AUTHORIZED_CHATS:
                 for i in AUTHORIZED_CHATS:
