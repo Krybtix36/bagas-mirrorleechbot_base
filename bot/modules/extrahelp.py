@@ -13,7 +13,6 @@ def extrahelp(update, context):
  ➻ `/tgm`*:* Upload file to telegraph
  ➻ `/tgt`*:* Upload text to telegraph
  ➻ `/whois`*:* get info from user
- ➻ `/webss`*:* Upload screenshot from web
  ➻ `/tts`*:* Convert text to voice
  ➻ `/tl`*:* Use /tl [LANGUAGE_CODE]
  ➻ `/paste`*:* Paste text to pasty
